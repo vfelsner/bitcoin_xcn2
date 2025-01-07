@@ -22,12 +22,13 @@ class CBlockHeader
 {
 public:
     // header
+    uint256 hashPrevBlock;      //Hash of previous block
+    uint256 hashMerkleRoot;     //Hash of Transaction DB (Merkle Tree) root
+    uint256 hashAccountRoot;    //Hash of AccountDB (Merkle Tree) root
+    uint64_t nTime;
+    uint32_t nBits;     //Diff Target, see: https://bitcoin.stackexchange.com/questions/57184/what-does-the-nbits-value-represent
+    uint64_t nNonce;
     int32_t nVersion;
-    uint256 hashPrevBlock;
-    uint256 hashMerkleRoot;
-    uint32_t nTime;
-    uint32_t nBits;
-    uint32_t nNonce;
 
     CBlockHeader()
     {
